@@ -133,8 +133,10 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CBinaryFileIO.h" />
     <ClInclude Include="CConsole.h" />
     <ClInclude Include="CDate.h" />
+    <ClInclude Include="CFile.h" />
     <ClInclude Include="CFstream.h" />
     <ClInclude Include="CFund.h" />
     <ClInclude Include="CTree.h" />

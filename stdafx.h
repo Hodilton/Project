@@ -3,8 +3,11 @@
 #include <iomanip>
 #include <vector>
 #include <string>
+#include <map>
 #include <limits>
 #include <cmath>
+#include <algorithm>
+#include <iterator>
 #include <fstream>
 
 #define E 2.71828

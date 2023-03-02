@@ -139,4 +139,10 @@ void CTree<T>::Print(ostream& out)
     this->Print(out, _root);
 }
 
+template<typename T>
+CNode<T>* CTree<T>::GetRoot() const
+{
+    return _root;
+}
+
 #endif // !_CTREE_CPP_

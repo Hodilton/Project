@@ -37,6 +37,8 @@ public:
     void AddNode(const T& data);
     void DeleteNode(const T& data);
     void Print(ostream& out);
+
+    CNode<T>* GetRoot() const;
 };
 
 #include "CTree.cpp"
