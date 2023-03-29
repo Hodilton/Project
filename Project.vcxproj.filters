@@ -13,24 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Entities">
-      <UniqueIdentifier>{b62e7dae-7bb8-4b53-82c4-6b173f355695}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities\CFund">
-      <UniqueIdentifier>{8f6301a2-42ef-423a-b415-0650647924ea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities\CCustomer">
-      <UniqueIdentifier>{7b5f6b7b-c842-4cf5-9629-ee747876d4cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CFile">
-      <UniqueIdentifier>{b4208ed8-5347-435a-a976-5a93b96ba7e2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="CTree">
-      <UniqueIdentifier>{58f55023-ef5c-4c91-8357-af516f9d0751}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entities\CDate">
-      <UniqueIdentifier>{8103c6b8-562b-4858-8024-09287f23c19b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
