@@ -128,11 +128,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CTree\CTree.cpp" />
+    <ClCompile Include="Entities\CCustomer\CCustomer.cpp" />
+    <ClCompile Include="Entities\CDate\CDate.cpp" />
+    <ClCompile Include="Entities\CFund\CFund.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data\Customer.txt" />
+    <Text Include="Data\Customer_Source.txt" />
     <Text Include="Data\Fund.txt" />
+    <Text Include="Data\Fund_Source.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CFile\CBinaryFileIO.h" />
+    <ClInclude Include="CFile\CFile.h" />
+    <ClInclude Include="CFile\CFileIO.h" />
+    <ClInclude Include="CTree\CTree.h" />
+    <ClInclude Include="Entities\CCustomer\CCompare.h" />
+    <ClInclude Include="Entities\CCustomer\CCustomer.h" />
+    <ClInclude Include="Entities\CDate\CDate.h" />
+    <ClInclude Include="Entities\CFund\CFund.h" />
+    <ClInclude Include="Headers\CConsole.h" />
+    <ClInclude Include="Headers\stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="Data\Customer.bin" />
+    <None Include="Data\Fund.bin" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
