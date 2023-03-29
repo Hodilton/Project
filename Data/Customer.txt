@@ -1,0 +1,59 @@
+Last Name: Bartsev
+First Name: Peter
+Middle Name: Mikhailovich
+Passport: 910
+City: Krasnodar
+Street: Mikheeva
+Home: 72
+Apartment: 0
+ID: 2212
+
+Last Name: Bazhenov
+First Name: Semyon
+Middle Name: Alekseevich
+Passport: 1112
+City: Krasnodar
+Street: Martynova
+Home: 13
+Apartment: 0
+ID: 2212
+
+Last Name: Burtsov
+First Name: Vladimir
+Middle Name: Naumovich
+Passport: 56
+City: Ekaterinburg
+Street: Kopylova
+Home: 9
+Apartment: 260
+ID: 1211
+
+Last Name: Khmelnov
+First Name: Peter
+Middle Name: Adrianovich
+Passport: 12
+City: Ekaterinburg
+Street: Lomonosova
+Home: 5
+Apartment: 901
+ID: 1212
+
+Last Name: Kinjaev
+First Name: Kuzma
+Middle Name: Natanovich
+Passport: 34
+City: Vladivostok
+Street: Pushkina
+Home: 7
+Apartment: 0
+ID: 2211
+
+Last Name: Tulepova
+First Name: Clara
+Middle Name: Eliseevna
+Passport: 78
+City: Abakan
+Street: Krylova
+Home: 29
+Apartment: 13
+ID: 2211

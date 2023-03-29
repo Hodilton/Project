@@ -4,9 +4,10 @@
 template<typename T>
 class CBinaryFileIO {
 public:
-    CBinaryFileIO(const string& filename): _file_name(filename) {}
+    CBinaryFileIO() : _file_name("") {};
+    CBinaryFileIO(const string& filename) : _file_name(filename) {}
 
-    bool Write(CTree<T>& tree, bool append = false) {
+    bool Write(CTree<T>& tree, bool append = false) const {
         ios_base::openmode mode = append
             ? ios_base::out | ios_base::binary | ios_base::app
             : ios_base::out | ios_base::binary;
@@ -18,38 +19,16 @@ public:
             return false;
         }
 
-        CNode<CFund>* tree_root;
+        CNode<T>* tree_root;
         tree_root = tree.GetRoot();
-        do {
-            if (tree_root->left == NULL) {
-                fout.write(reinterpret_cast<const char*>(&tree_root->data), sizeof(T));
-                tree_root = tree_root->right;
-            }
-            else {
-                CNode<CFund>* temp = tree_root->left;
+        WriteTree(fout, tree_root);
 
-                while (temp->right && temp->right != tree_root) {
-                    temp = temp->right;
-                }
-
-                if (temp->right == NULL) {
-                    temp->right = tree_root;
-                    tree_root = tree_root->left;
-                }
-                else {
-                    temp->right = NULL;
-                    fout.write(reinterpret_cast<const char*>(&tree_root->data), sizeof(T));
-                    tree_root = tree_root->right;
-                }
-            }
-
-        } while (tree_root);
         fout.close();
 
         return true;
     }
 
-    bool Read(CTree<T>& tree) {
+    bool Read(CTree<T>& tree) const {
         ios_base::openmode mode = ios_base::in | ios_base::binary;
 
         fstream fin(_file_name, mode);
@@ -60,8 +39,9 @@ public:
         }
 
         T temp;
-        while (fin.read(reinterpret_cast<char*>(&temp), sizeof(T)))
+        while (fin.read(reinterpret_cast<char*>(&temp), sizeof(T))) {
             tree.AddNode(temp);
+        }
 
         fin.close();
 
@@ -71,7 +51,8 @@ public:
 private:
     string _file_name;
 
-    bool IsFileOpen( const basic_fstream<char>& stream /*const basic_ios<char>& stream*/, const string& mode) const {
+    template<typename Stream>
+    bool IsFileOpen(const Stream& stream /*const basic_fstream<char>& stream*/ /*const basic_ios<char>& stream*/, const string& mode) const {
         if (!stream.is_open()) {
             cout << "File " << _file_name << " was not open for " << mode << "." << endl;
             system("pause");
@@ -80,4 +61,14 @@ private:
 
         return true;
     }
+
+    void WriteTree(basic_fstream<char>& stream, const CNode<T>* tree) const {
+        if (tree) {
+            WriteTree(stream, tree->right);
+            stream.write(reinterpret_cast<const char*>(&tree->data), sizeof(T));
+            WriteTree(stream, tree->left);
+        }
+    }
+
+    CBinaryFileIO& operator=(const CBinaryFileIO&) = delete;
 };

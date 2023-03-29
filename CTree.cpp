@@ -61,45 +61,78 @@ void CTree<T>::DeleteNode(CNode<T>** root, const T& data)
 template<typename T>
 void CTree<T>::Print(ostream& out, CNode<T>* root)
 {
-  /*  if (root) {
-        Print(out, root->right);
-        out << root->data << endl;
-        Print(out, root->left);
+   /* if (root) {
+        Print(root->right);
+        out << root->data << endl << endl;
+        Print(root->left);
     }*/
 
-    do {
-        if (root->left == NULL) {
-            out << root->data;
-            root = root->right;
-        }
-        else {
-            CNode<T>* temp = root->left;
-
-            while (temp->right && temp->right != root) {
-                temp = temp->right;
-            }
-
-            if (temp->right == NULL) {
-                temp->right = root;
-                root = root->left;
+    if (root) {
+        bool new_line;
+        bool first = true;
+        do {
+            new_line = false;
+            if (root->left == NULL) {
+                new_line = true;
+                if (!first) out << endl << endl;
+                out << root->data;
+                root = root->right;
+                first = false;
             }
             else {
-                temp->right = NULL;
-                cout << root->data;
-                root = root->right;
-            }
-        }
+                CNode<T>* temp = root->left;
 
-    } while (root && out << endl << endl);
+                while (temp->right && temp->right != root) {
+                    temp = temp->right;
+                }
+
+                if (temp->right == NULL) {
+                    temp->right = root;
+                    root = root->left;
+                }
+                else {
+                    new_line = true;
+                    temp->right = NULL;
+                    if (!first) out << endl << endl;
+                    out << root->data;
+                    root = root->right;
+                    first = false;
+                }
+            }
+
+        } while (root);
+        if (!new_line) out << endl << endl;
+    }
+    else {
+        cout << "Root is empty" << endl;
+    }
 }
 
 template<typename T>
 void CTree<T>::FreeMemory(CNode<T>** root)
 {
-    if (*root)
+   /* if (*root)
     {
         FreeMemory(&(*root)->left);
         FreeMemory(&(*root)->right);
+
+        delete (*root);
+        (*root) = nullptr;
+    }*/
+
+
+    if (*root)
+    {
+        if ((*root)->left)
+        {
+            FreeMemory(&(*root)->left);
+            (*root)->left = nullptr;
+        }
+        if ((*root)->right)
+        {
+            FreeMemory(&(*root)->right);
+            (*root)->right = nullptr;
+        }
 
         delete (*root);
         (*root) = nullptr;

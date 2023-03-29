@@ -1,0 +1,59 @@
+Фамилия: Khmelnov
+Имя: Peter
+Отчество: Adrianovich
+Номер пасспорта: 12
+Город: Ekaterinburg
+Улица: Lomonosova
+Дом: 5
+Квартира: 901
+Идентификатор: 1212
+
+Фамилия: Kinjaev
+Имя: Kuzma
+Отчество: Natanovich
+Номер пасспорта: 34
+Город: Vladivostok
+Улица: Pushkina
+Дом: 7
+Квартира: 0
+Идентификатор: 2211
+
+Фамилия: Burtsov
+Имя: Vladimir
+Отчество: Naumovich
+Номер пасспорта: 56
+Город: Ekaterinburg
+Улица: Kopylova
+Дом: 9
+Квартира: 260
+Идентификатор: 1211
+
+Фамилия: Tulepova
+Имя: Clara
+Отчество: Eliseevna
+Номер пасспорта: 78
+Город: Abakan
+Улица: Krylova
+Дом: 29
+Квартира: 13
+Идентификатор: 2211
+
+Фамилия: Bartsev
+Имя: Peter
+Отчество: Mikhailovich
+Номер пасспорта: 910
+Город: Saint-Petersburg
+Улица: Mikheeva
+Дом: 72
+Квартира: 0
+Идентификатор: 2212
+
+Фамилия: Bazhenov
+Имя: Semyon
+Отчество: Alekseevich
+Номер пасспорта: 1112
+Город: Krasnodar
+Улица: Martynova
+Дом: 13
+Квартира: 0
+Идентификатор: 2212

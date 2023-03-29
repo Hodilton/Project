@@ -27,6 +27,9 @@
     <ClCompile Include="CDate.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="CCustomer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -44,19 +47,17 @@
     <ClInclude Include="CDate.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CFstream.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="CBinaryFileIO.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="CFile.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Fund.txt">
-      <Filter>Файлы ресурсов</Filter>
-    </Text>
+    <ClInclude Include="CCustomer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CFileIO.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

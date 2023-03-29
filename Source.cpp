@@ -2,22 +2,20 @@
 #include "CConsole.h"
 #include "CTree.h"
 #include "CFund.h"
-#include "CFstream.h"
+#include "CCustomer.h"
 #include "CFile.h"
 
 int main() {
-    const File files;
 	CTree<CFund> tree_fund;
+	CTree<CCustomer> tree_customer;
 
-	if (!CFstream<CFund>::Read(tree_fund, files.fund_txt)) return 0;
-	//tree_fund.Print(cout);
+	CFile::customer_txt.Read(tree_customer);
+	CFile::customer_bin.Write(tree_customer);
+	CFile::customer_bin.Read(tree_customer);
+	tree_customer.Print(cout);
 
-    CBinaryFileIO<CFund> fund_file_bin("fund_test_bin");
-    fund_file_bin.Write(tree_fund);
-
-    CTree<CFund> tree_fund1;
-    fund_file_bin.Read(tree_fund1);
-    tree_fund1.Print(cout);
+	CFile::fund_bin.Read(tree_fund);
+	tree_fund.Print(cout);
 
 	return 0;
 }
