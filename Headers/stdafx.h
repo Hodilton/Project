@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <iterator>
 #include <fstream>
+#include<functional>
 
 #define E 2.71828
 #define PI 3.14159

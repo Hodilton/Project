@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\edmund\Documents\C++Project\Project\Data;C:\Users\edmund\Documents\C++Project\Project\CFile;C:\Users\edmund\Documents\C++Project\Project\Entities\CDate;C:\Users\edmund\Documents\C++Project\Project\Entities\CFund;C:\Users\edmund\Documents\C++Project\Project\Entities\CCustomer;C:\Users\edmund\Documents\C++Project\Project\CTree;C:\Users\edmund\Documents\C++Project\Project\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,22 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CCustomer.cpp" />
-    <ClCompile Include="CDate.cpp" />
-    <ClCompile Include="CFund.cpp" />
-    <ClCompile Include="CTree.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CBinaryFileIO.h" />
-    <ClInclude Include="CConsole.h" />
-    <ClInclude Include="CCustomer.h" />
-    <ClInclude Include="CDate.h" />
-    <ClInclude Include="CFile.h" />
-    <ClInclude Include="CFileIO.h" />
-    <ClInclude Include="CFund.h" />
-    <ClInclude Include="CTree.h" />
-    <ClInclude Include="stdafx.h" />
+    <Text Include="Data\Customer.txt" />
+    <Text Include="Data\Fund.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

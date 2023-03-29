@@ -1,25 +1,6 @@
 #pragma once
 #include "stdafx.h"
 
-class CCompare {
-public:
-	CCompare() {
-		current_state = 5;
-	}
-
-	unsigned short GetState() {
-		return current_state;
-	}
-
-	void SwitchState(unsigned short state) {
-		current_state = state;
-	}
-
-private:
-	enum class StateCmp { First = 1, Last = 2, Middle = 4, Pass = 5 };
-	unsigned short current_state;
-};
-
 class CCustomer {
 public:
 	char last_name[256];
@@ -34,7 +15,7 @@ public:
 
 	CCustomer();
 	CCustomer(const char* last_name, const char* first_name, const char* middle_name, const size_t& passport, const char* city,
-		const char* street, const size_t& home, const size_t& apartment, const size_t& id);
+		      const char* street, const size_t& home, const size_t& apartment, const size_t& id);
 	CCustomer(const CCustomer& another);
 
 	bool operator<(const CCustomer& another) const;

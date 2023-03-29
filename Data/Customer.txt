@@ -2,7 +2,7 @@ Last Name: Bartsev
 First Name: Peter
 Middle Name: Mikhailovich
 Passport: 910
-City: Krasnodar
+City: Saint-Petersburg
 Street: Mikheeva
 Home: 72
 Apartment: 0

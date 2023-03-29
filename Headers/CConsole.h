@@ -1,5 +1,5 @@
 #pragma once
-#include "stdafx.h"
+#include "Headers/stdafx.h"
 
 #if defined(max)
 #undef max
