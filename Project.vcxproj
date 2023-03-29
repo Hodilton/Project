@@ -104,7 +104,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\edmund\Documents\C++Project\Project\Data;C:\Users\edmund\Documents\C++Project\Project\CFile;C:\Users\edmund\Documents\C++Project\Project\Entities\CDate;C:\Users\edmund\Documents\C++Project\Project\Entities\CFund;C:\Users\edmund\Documents\C++Project\Project\Entities\CCustomer;C:\Users\edmund\Documents\C++Project\Project\CTree;C:\Users\edmund\Documents\C++Project\Project\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,33 +127,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CTree\CTree.cpp" />
-    <ClCompile Include="Entities\CCustomer\CCustomer.cpp" />
-    <ClCompile Include="Entities\CDate\CDate.cpp" />
-    <ClCompile Include="Entities\CFund\CFund.cpp" />
+    <ClCompile Include="CCustomer.cpp" />
+    <ClCompile Include="CDate.cpp" />
+    <ClCompile Include="CFund.cpp" />
+    <ClCompile Include="CTree.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Data\Customer.txt" />
-    <Text Include="Data\Customer_Source.txt" />
     <Text Include="Data\Fund.txt" />
-    <Text Include="Data\Fund_Source.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CFile\CBinaryFileIO.h" />
-    <ClInclude Include="CFile\CFile.h" />
-    <ClInclude Include="CFile\CFileIO.h" />
-    <ClInclude Include="CTree\CTree.h" />
-    <ClInclude Include="Entities\CCustomer\CCompare.h" />
-    <ClInclude Include="Entities\CCustomer\CCustomer.h" />
-    <ClInclude Include="Entities\CDate\CDate.h" />
-    <ClInclude Include="Entities\CFund\CFund.h" />
-    <ClInclude Include="Headers\CConsole.h" />
-    <ClInclude Include="Headers\stdafx.h" />
+    <ClInclude Include="CBinaryFileIO.h" />
+    <ClInclude Include="CCompare.h" />
+    <ClInclude Include="CConsole.h" />
+    <ClInclude Include="CCustomer.h" />
+    <ClInclude Include="CDate.h" />
+    <ClInclude Include="CFile.h" />
+    <ClInclude Include="CFileIO.h" />
+    <ClInclude Include="CFund.h" />
+    <ClInclude Include="CTree.h" />
+    <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".gitattributes" />
-    <None Include=".gitignore" />
     <None Include="Data\Customer.bin" />
     <None Include="Data\Fund.bin" />
   </ItemGroup>

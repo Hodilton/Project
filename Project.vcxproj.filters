@@ -13,21 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{41ce4082-23a5-4f08-acbf-82d532ed9f7b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CTree\CTree.cpp">
+    <ClCompile Include="CTree.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\CCustomer\CCustomer.cpp">
+    <ClCompile Include="CFund.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\CDate\CDate.cpp">
+    <ClCompile Include="CDate.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\CFund\CFund.cpp">
+    <ClCompile Include="CCustomer.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,38 +41,36 @@
     <Text Include="Data\Fund.txt">
       <Filter>Файлы ресурсов</Filter>
     </Text>
-    <Text Include="Data\Customer_Source.txt" />
-    <Text Include="Data\Fund_Source.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CFile\CBinaryFileIO.h">
+    <ClInclude Include="stdafx.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CConsole.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="CTree.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CFile\CFile.h">
+    <ClInclude Include="CFund.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CFile\CFileIO.h">
+    <ClInclude Include="CFileIO.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CTree\CTree.h">
+    <ClInclude Include="CFile.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\CCustomer\CCompare.h">
+    <ClInclude Include="CDate.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\CCustomer\CCustomer.h">
+    <ClInclude Include="CCustomer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\CDate\CDate.h">
+    <ClInclude Include="CCompare.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\CFund\CFund.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\CConsole.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\stdafx.h">
+    <ClInclude Include="CBinaryFileIO.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -80,7 +81,5 @@
     <None Include="Data\Fund.bin">
       <Filter>Файлы ресурсов</Filter>
     </None>
-    <None Include=".gitattributes" />
-    <None Include=".gitignore" />
   </ItemGroup>
 </Project>
