@@ -22,19 +22,19 @@ private:
 
 class CCustomer {
 public:
-	string last_name;
-	string first_name;
-	string middle_name;
+	char last_name[256];
+	char first_name[256];
+	char middle_name[256];
 	size_t passport;
-	string city;
-	string street;
+	char city[256];
+	char street[256];
 	size_t home;
 	size_t apartment;
 	size_t id;
 
 	CCustomer();
-	CCustomer(const string& last_name, const string& first_name, const string& middle_name, const size_t& passport, const string& city,
-	          const string& street, const size_t& home, const size_t& apartment, const size_t& id);
+	CCustomer(const char* last_name, const char* first_name, const char* middle_name, const size_t& passport, const char* city,
+		const char* street, const size_t& home, const size_t& apartment, const size_t& id);
 	CCustomer(const CCustomer& another);
 
 	bool operator<(const CCustomer& another) const;

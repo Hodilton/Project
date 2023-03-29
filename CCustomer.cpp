@@ -1,50 +1,89 @@
 #include "CCustomer.h"
 
-CCustomer::CCustomer() : last_name(""), first_name(""), middle_name(""), passport(0), city(""), street(""), home(0), apartment(0), id(0) {}
+CCustomer::CCustomer() : last_name(""), first_name(""), middle_name(""), passport(0), city(""), street(""), home(0), apartment(0), id(0) {
+	memset(last_name, 0, sizeof(last_name));
+	memset(first_name, 0, sizeof(first_name));
+	memset(middle_name, 0, sizeof(middle_name));
+	memset(city, 0, sizeof(city));
+	memset(street, 0, sizeof(street));
+}
 
-CCustomer::CCustomer(const string& last_name, const string& first_name, const string& middle_name, const size_t& passport, 
-	                 const string& city, const string& street, const size_t& home, const size_t& apartment, const size_t& id)
-	: last_name(last_name), first_name(first_name), middle_name(middle_name), passport(passport), city(city), 
-	  street(street), home(home), apartment(apartment), id(id) {}
-
+CCustomer::CCustomer(const char* last_name, const char* first_name, const char* middle_name, const size_t& passport,
+	const char* city, const char* street, const size_t& home, const size_t& apartment, const size_t& id)
+	: passport(passport), home(home), apartment(apartment), id(id)
+{
+	strncpy_s(this->last_name, last_name, sizeof(this->last_name));
+	strncpy_s(this->first_name, first_name, sizeof(this->first_name));
+	strncpy_s(this->middle_name, middle_name, sizeof(this->middle_name));
+	strncpy_s(this->city, city, sizeof(this->city));
+	strncpy_s(this->street, street, sizeof(this->street));
+}
 
 CCustomer::CCustomer(const CCustomer& another)
-	: last_name(another.last_name), first_name(another.first_name), middle_name(another.middle_name), passport(another.passport), 
-	  city(another.city), street(another.street), home(another.home), apartment(another.apartment), id(another.id) {}
+	: passport(another.passport), home(another.home), apartment(another.apartment), id(another.id)
+{
+	strncpy_s(this->last_name, another.last_name, sizeof(this->last_name));
+	strncpy_s(this->first_name, another.first_name, sizeof(this->first_name));
+	strncpy_s(this->middle_name, another.middle_name, sizeof(this->middle_name));
+	strncpy_s(this->city, another.city, sizeof(this->city));
+	strncpy_s(this->street, another.street, sizeof(this->street));
+}
 
 bool CCustomer::operator<(const CCustomer& another) const
 {
-	return this->last_name < another.last_name
-		|| (this->last_name == another.last_name && this->first_name < another.first_name)
-		|| (this->last_name == another.last_name && this->first_name == another.first_name && this->middle_name < another.middle_name);
+    int result = strcmp(this->last_name, another.last_name);
+    if (result < 0) {
+        return true;
+    }
+    else if (result == 0) {
+        result = strcmp(this->first_name, another.first_name);
+        if (result < 0) {
+            return true;
+        }
+        else if (result == 0) {
+            return strcmp(this->middle_name, another.middle_name) < 0;
+        }
+    }
+    return false;
 }
 
 bool CCustomer::operator>(const CCustomer& another) const
 {
-	return this->last_name > another.last_name
-		|| (this->last_name == another.last_name && this->first_name > another.first_name)
-		|| (this->last_name == another.last_name && this->first_name == another.first_name && this->middle_name > another.middle_name);
+    int result = strcmp(this->last_name, another.last_name);
+    if (result > 0) {
+        return true;
+    }
+    else if (result == 0) {
+        result = strcmp(this->first_name, another.first_name);
+        if (result > 0) {
+            return true;
+        }
+        else if (result == 0) {
+            return strcmp(this->middle_name, another.middle_name) > 0;
+        }
+    }
+    return false;
 }
 
 bool CCustomer::operator==(const CCustomer& another) const
 {
-	return this->last_name == another.last_name
-		&& this->first_name == another.first_name
-		&& this->middle_name == another.middle_name;
+    return strcmp(this->last_name, another.last_name) == 0
+        && strcmp(this->first_name, another.first_name) == 0
+        && strcmp(this->middle_name, another.middle_name) == 0;
 }
 
 CCustomer& CCustomer::operator=(const CCustomer& another)
 {
-
-	this->last_name =  another.last_name;
-	this->first_name = another.first_name;
-	this->middle_name = another.middle_name;
-	this->city = another.city;
-	this->street = another.street;
-	this->home = another.home;
-	this->apartment = another.apartment;
-	this->id = another.id;
-	return *this;
+    strcpy_s(this->last_name, another.last_name);
+    strcpy_s(this->first_name, another.first_name);
+    strcpy_s(this->middle_name, another.middle_name);
+    this->passport = another.passport;
+    strcpy_s(this->city, another.city);
+    strcpy_s(this->street, another.street);
+    this->home = another.home;
+    this->apartment = another.apartment;
+    this->id = another.id;
+    return *this;
 }
 
 istream& operator>>(istream& in, CCustomer& another)
