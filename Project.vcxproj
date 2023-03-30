@@ -146,7 +146,12 @@
     <ClInclude Include="CFile.h" />
     <ClInclude Include="CFileIO.h" />
     <ClInclude Include="CFund.h" />
+    <ClInclude Include="CMenuItem.h" />
     <ClInclude Include="CTree.h" />
+    <ClInclude Include="Data\Header.h" />
+    <ClInclude Include="FileName.h" />
+    <ClInclude Include="FilePath.h" />
+    <ClInclude Include="IFile.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>

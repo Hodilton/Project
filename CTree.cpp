@@ -59,7 +59,7 @@ void CTree<T>::DeleteNode(CNode<T>** root, const T& data)
 }
 
 template<typename T>
-void CTree<T>::Print(ostream& out, CNode<T>* root)
+void CTree<T>::Print(ostream& out, CNode<T>* root) const
 {
    /* if (root) {
         Print(root->right);
@@ -167,7 +167,7 @@ void CTree<T>::DeleteNode(const T& data)
 }
 
 template<typename T>
-void CTree<T>::Print(ostream& out)
+void CTree<T>::Print(ostream& out) const
 {
     this->Print(out, _root);
 }

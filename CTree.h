@@ -25,7 +25,7 @@ private:
     CNode<T>* CreateRoot(const T& data);
     void AddNode(CNode<T>** root, const T& data);
     void DeleteNode(CNode<T>** root, const T& data);
-    void Print(ostream& out, CNode<T>* root);
+    void Print(ostream& out, CNode<T>* root) const;
     void FreeMemory(CNode<T>** root);
 
     CNode<T>* FindMin(CNode<T>* data);
@@ -36,7 +36,7 @@ public:
 
     void AddNode(const T& data);
     void DeleteNode(const T& data);
-    void Print(ostream& out);
+    void Print(ostream& out) const;
 
     CNode<T>* GetRoot() const;
 };

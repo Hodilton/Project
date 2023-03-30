@@ -1,59 +1,25 @@
 #pragma once
 #include "stdafx.h"
 #include "CTree.h"
+#include"IFile.h"
 
 template<typename T>
-class CFileIO {
+class CFileIO : public IFile<T> {
 public:
-	CFileIO() : _file_name("") {};
-	CFileIO(const string& filename) : _file_name(filename) {}
+	CFileIO() : IFile<T>("") {};
+	CFileIO(const string& file_name) : IFile<T>(file_name, false) {}
 
-	bool Write(CTree<T>& tree) const {
-		ofstream fout;
-		fout.open(_file_name, ios::out);
-
-		if (!IsFileOpen(fout, "write")) {
-			fout.close();
-			return false;
-		}
-
+private:
+	void BehaviorWrite(ostream& fout, const CTree<T>& tree, const CNode<T>* root) const override {
 		tree.Print(fout);
-
-		fout.close();
-		return 0;
 	}
 
-	bool Read(CTree<T>& tree) const {
-		ifstream fin;
-		fin.open(_file_name, ios::in);
-
-		if (!IsFileOpen(fin, "read")) {
-			fin.close();
-			return false;
-		}
-		
+	void BehaviorRead(ifstream& fin, CTree<T>& tree) const override {
 		while (!fin.eof()) {
 			T temp;
 			fin >> temp;
 			tree.AddNode(temp);
 		}
-
-		fin.close();
-		return true;
-	}
-
-private:
-	string _file_name;
-
-	template<typename Stream>
-	bool IsFileOpen(const Stream& stream /*const basic_fstream<char>& stream*/ /*const basic_ios<char>& stream*/, const string& mode) const {
-		if (!stream.is_open()) {
-			cout << "File " << _file_name << " was not open for " << mode << "." << endl;
-			system("pause");
-			return false;
-		}
-
-		return true;
 	}
 
 	CFileIO& operator=(const CFileIO&) = delete;

@@ -16,22 +16,34 @@
     <Filter Include="Headers">
       <UniqueIdentifier>{41ce4082-23a5-4f08-acbf-82d532ed9f7b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{e0d0630a-cd7e-47cf-bc3b-51e25c63a1a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File">
+      <UniqueIdentifier>{bc916416-8169-418e-a2e7-98b082404726}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree">
+      <UniqueIdentifier>{9c86156e-8185-4c01-9316-4f315168909e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{21967987-278d-4d8b-b722-1a35da71b31a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CTree.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="CCustomer.cpp">
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="CFund.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
     <ClCompile Include="CDate.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Entities</Filter>
     </ClCompile>
-    <ClCompile Include="CCustomer.cpp">
-      <Filter>Исходные файлы</Filter>
+    <ClCompile Include="CTree.cpp">
+      <Filter>Tree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,28 +61,43 @@
     <ClInclude Include="CConsole.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="CTree.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CFund.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CFileIO.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CFile.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CDate.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="CCustomer.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="CCompare.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="CCustomer.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="CFund.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="CDate.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="CFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
     <ClInclude Include="CBinaryFileIO.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="CFileIO.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="CTree.h">
+      <Filter>Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="IFile.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="CMenuItem.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="FilePath.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="FileName.h">
+      <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Data\Header.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
