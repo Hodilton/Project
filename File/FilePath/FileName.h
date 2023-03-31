@@ -1,8 +1,8 @@
 #pragma once
-#include"stdafx.h"
-#include"FilePath.h"
+#include "stdafx.h"
+#include "FilePath.h"
 
-class ÑFileName {
+class FileName {
 public:
     static const string fund_txt;
     static const string customer_txt;
@@ -13,11 +13,11 @@ public:
     static const string customer_source;
 };
 
-const string ÑFileName::fund_txt = ÑFilePath::base_directory + ÑFilePath::data_directory + ÑFundFilePath::txt;
-const string ÑFileName::customer_txt = ÑFilePath::base_directory + ÑFilePath::data_directory + ÑCustomerFilePath::txt;
+const string FileName::fund_txt = FilePath::base_directory + FilePath::data_directory + FundFilePath::txt;
+const string FileName::customer_txt = FilePath::base_directory + FilePath::data_directory + CustomerFilePath::txt;
 
-const string ÑFileName::fund_bin = ÑFilePath::base_directory + ÑFilePath::data_directory + ÑFundFilePath::bin;
-const string ÑFileName::customer_bin = ÑFilePath::base_directory + ÑFilePath::data_directory + ÑCustomerFilePath::bin;
+const string FileName::fund_bin = FilePath::base_directory + FilePath::data_directory + FundFilePath::bin;
+const string FileName::customer_bin = FilePath::base_directory + FilePath::data_directory + CustomerFilePath::bin;
 
-const string ÑFileName::fund_source = ÑFilePath::base_directory + ÑFilePath::data_directory + ÑFundFilePath::source;
-const string ÑFileName::customer_source = ÑFilePath::base_directory + ÑFilePath::data_directory + ÑCustomerFilePath::source;
+const string FileName::fund_source = FilePath::base_directory + FilePath::data_directory + FundFilePath::source;
+const string FileName::customer_source = FilePath::base_directory + FilePath::data_directory + CustomerFilePath::source;

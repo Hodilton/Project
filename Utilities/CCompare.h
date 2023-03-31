@@ -1,8 +1,8 @@
 #pragma once
 
-class CCompare {
+class Compare {
 public:
-	CCompare() {
+	Compare() {
 		current_state = 5;
 	}
 

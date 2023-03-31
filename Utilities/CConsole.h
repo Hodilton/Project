@@ -10,7 +10,7 @@
 #endif
 
 template<typename T>
-class CConsole {
+class Console {
 public:
 	static T ReadNumber(const vector<string>& text, istream& in = cin, T min = numeric_limits<T>::min(), T max = numeric_limits<T>::max())
 	{
@@ -56,7 +56,7 @@ public:
 	}
 
 private:
-	CConsole() = delete;
-	CConsole(const CConsole&) = delete;
-	CConsole& operator=(const CConsole&) = delete;
+	Console() = delete;
+	Console(const Console&) = delete;
+	Console& operator=(const Console&) = delete;
 };

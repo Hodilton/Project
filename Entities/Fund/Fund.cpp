@@ -1,29 +1,29 @@
-#include "CFund.h"
+#include "Fund.h"
 
-CFund::CFund() : id(0), passport_1(0), passport_2(0), passport_3(0), depart(), arrival() {}
+Fund::Fund() : id(0), passport_1(0), passport_2(0), passport_3(0), depart(), arrival() {}
 
-CFund::CFund(const size_t& id, const size_t& passport_1, const size_t& passport_2, const size_t& passport_3, const CDate& arrival, const CDate& depart)
+Fund::Fund(const size_t& id, const size_t& passport_1, const size_t& passport_2, const size_t& passport_3, const Date& arrival, const Date& depart)
 	: id(id), passport_1(passport_1), passport_2(passport_2), passport_3(passport_3), depart(depart), arrival(arrival) {}
 
-CFund::CFund(const CFund& another) 
+Fund::Fund(const Fund& another) 
 	: id(another.id), passport_1(another.passport_1), passport_2(another.passport_2), passport_3(another.passport_3), depart(another.depart), arrival(another.arrival) {}
 
-bool CFund::operator<(const CFund& another) const
+bool Fund::operator<(const Fund& another) const
 {
 	return this->id < another.id;
 }
 
-bool CFund::operator>(const CFund& another) const
+bool Fund::operator>(const Fund& another) const
 {
 	return this->id > another.id;
 }
 
-bool CFund::operator==(const CFund& another) const
+bool Fund::operator==(const Fund& another) const
 {
 	return this->id == another.id;
 }
 
-CFund& CFund::operator=(const CFund& another)
+Fund& Fund::operator=(const Fund& another)
 {
 	this->id = another.id;
 	this->passport_1 = another.passport_1;
@@ -34,7 +34,7 @@ CFund& CFund::operator=(const CFund& another)
 	return *this;
 }
 
-istream& operator>>(istream& in, CFund& another)
+istream& operator>>(istream& in, Fund& another)
 {
 	ReadAfterColon(in, another.id);
 	in >> another.arrival;
@@ -45,7 +45,7 @@ istream& operator>>(istream& in, CFund& another)
 	return in;
 }
 
-ostream& operator<<(ostream& out, const CFund& another)
+ostream& operator<<(ostream& out, const Fund& another)
 {
 	out << "ID: " << another.id << endl;
 	out << "Arrival: " << another.arrival << endl;

@@ -1,29 +1,22 @@
 #include "stdafx.h"
-//#include "CConsole.h"
-#include "CTree.h"
-#include "CFund.h"
-#include "CCustomer.h"
-
-#include "CFile.h"
-
-#include"CMenuItem.h"
+#include "Tree.h"
+#include "Fund.h"
+#include "Customer.h"
+#include "File.h"
+#include"MenuItem.h"
 
 int main() {
-	CTree<CFund> tree_fund;
-	CTree<CCustomer> tree_customer;
+	Tree<Fund> tree_fund;
+	Tree<Customer> tree_customer;
 
-	CFile::customer_txt.Read(tree_customer);
-	CFile::customer_bin.Write(tree_customer);
-	tree_customer.~CTree();
-
-	CFile::customer_bin.Read(tree_customer);
+	File::customer_bin.Read(tree_customer);
 	tree_customer.Print(cout);
 
-	CFile::fund_bin.Read(tree_fund);
+	File::fund_bin.Read(tree_fund);
 	tree_fund.Print(cout);
 
-    /*CMenuItems menu_items;
-    CMenu::Display(menu_items.main);*/
+    MenuItems menu_items;
+    Menu::Display(menu_items.main);
 
 	return 0;
 }

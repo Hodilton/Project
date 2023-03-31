@@ -128,10 +128,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Entities\Customer\CCustomer.cpp" />
-    <ClCompile Include="Entities\Date\CDate.cpp" />
-    <ClCompile Include="Entities\Fund\CFund.cpp" />
-    <ClCompile Include="Tree\CTree.cpp" />
+    <ClCompile Include="Entities\Customer\Customer.cpp" />
+    <ClCompile Include="Entities\Date\Date.cpp" />
+    <ClCompile Include="Entities\Fund\Fund.cpp" />
+    <ClCompile Include="Tree\Tree.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,19 +139,19 @@
     <Text Include="Data\Fund.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="File\FileIO\CBinaryFileIO.h" />
+    <ClInclude Include="File\FileIO\FileIOBinary.h" />
     <ClInclude Include="Utilities\CCompare.h" />
     <ClInclude Include="Utilities\CConsole.h" />
-    <ClInclude Include="Entities\Customer\CCustomer.h" />
-    <ClInclude Include="Entities\CDate.h" />
-    <ClInclude Include="File\CFile.h" />
-    <ClInclude Include="File\FileIO\CFileIO.h" />
-    <ClInclude Include="Entities\Fund\CFund.h" />
-    <ClInclude Include="Menu\CMenuItem.h" />
-    <ClInclude Include="Tree\CTree.h" />
+    <ClInclude Include="Entities\Customer\Customer.h" />
+    <ClInclude Include="Entities\Date\Date.h" />
+    <ClInclude Include="File\File.h" />
+    <ClInclude Include="File\FileIO\FileIO.h" />
+    <ClInclude Include="Entities\Fund\Fund.h" />
+    <ClInclude Include="Menu\MenuItem.h" />
+    <ClInclude Include="Tree\Tree.h" />
     <ClInclude Include="File\FilePath\FileName.h" />
     <ClInclude Include="File\FilePath\FilePath.h" />
-    <ClInclude Include="File\FileIO\IFile.h" />
+    <ClInclude Include="File\FileIO\FileIOBase.h" />
     <ClInclude Include="Utilities\stdafx.h" />
   </ItemGroup>
   <ItemGroup>

@@ -33,16 +33,16 @@
     <ClCompile Include="Source.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\Customer\CCustomer.cpp">
+    <ClCompile Include="Entities\Customer\Customer.cpp">
       <Filter>Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\Fund\CFund.cpp">
+    <ClCompile Include="Entities\Fund\Fund.cpp">
       <Filter>Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\Date\CDate.cpp">
+    <ClCompile Include="Entities\Date\Date.cpp">
       <Filter>Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Tree\CTree.cpp">
+    <ClCompile Include="Tree\Tree.cpp">
       <Filter>Tree</Filter>
     </ClCompile>
   </ItemGroup>
@@ -64,31 +64,31 @@
     <ClInclude Include="Utilities\CCompare.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\Customer\CCustomer.h">
+    <ClInclude Include="Entities\Customer\Customer.h">
       <Filter>Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\Fund\CFund.h">
+    <ClInclude Include="Entities\Fund\Fund.h">
       <Filter>Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\CDate.h">
+    <ClInclude Include="Entities\Date\Date.h">
       <Filter>Entities</Filter>
     </ClInclude>
-    <ClInclude Include="File\CFile.h">
+    <ClInclude Include="File\File.h">
       <Filter>File</Filter>
     </ClInclude>
-    <ClInclude Include="File\FileIO\CBinaryFileIO.h">
+    <ClInclude Include="File\FileIO\FileIOBinary.h">
       <Filter>File</Filter>
     </ClInclude>
-    <ClInclude Include="File\FileIO\CFileIO.h">
+    <ClInclude Include="File\FileIO\FileIO.h">
       <Filter>File</Filter>
     </ClInclude>
-    <ClInclude Include="Tree\CTree.h">
+    <ClInclude Include="Tree\Tree.h">
       <Filter>Tree</Filter>
     </ClInclude>
-    <ClInclude Include="File\FileIO\IFile.h">
+    <ClInclude Include="File\FileIO\FileIOBase.h">
       <Filter>File</Filter>
     </ClInclude>
-    <ClInclude Include="Menu\CMenuItem.h">
+    <ClInclude Include="Menu\MenuItem.h">
       <Filter>Menu</Filter>
     </ClInclude>
     <ClInclude Include="File\FilePath\FilePath.h">

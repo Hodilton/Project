@@ -1,7 +1,7 @@
 #pragma once
 #include"stdafx.h"
 
-class CMenuItem {
+class MenuItem {
 public:
     virtual const vector<string>& GetText() const = 0;
 
@@ -27,7 +27,7 @@ private:
     void virtual Method_7() const = 0;
 };
 
-class CMainMenu : public CMenuItem {
+class MainMenu : public MenuItem {
 public:
     const vector<string>& GetText() const override {
         static const vector<string> text = { "Select\n",
@@ -58,9 +58,9 @@ private:
     void Method_7() const override { cout << "Method 7 called" << endl; }
 };
 
-class CMenu {
+class Menu {
 public:
-    static void Display(const CMenuItem& menu_item) {
+    static void Display(const MenuItem& menu_item) {
         const vector<string>& text = menu_item.GetText();
         const vector<function<void()>>& methods = menu_item.GetMethods();
 
@@ -79,9 +79,9 @@ private:
     static unsigned short _choice;
 };
 
-unsigned short CMenu::_choice = 0;
+unsigned short Menu::_choice = 0;
 
-class CMenuItems {
+class MenuItems {
 public:
-    const CMainMenu main;
+    const MainMenu main;
 };
