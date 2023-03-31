@@ -3,7 +3,9 @@
 #include "Fund.h"
 #include "Customer.h"
 #include "File.h"
-#include"MenuItem.h"
+#include "MenuItem.h"
+
+string Compare::_current_state = "pass";
 
 int main() {
 	Tree<Fund> tree_fund;
@@ -17,6 +19,6 @@ int main() {
 
     MenuItems menu_items;
     Menu::Display(menu_items.main);
-
+	
 	return 0;
 }

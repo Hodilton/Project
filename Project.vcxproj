@@ -140,8 +140,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="File\FileIO\FileIOBinary.h" />
-    <ClInclude Include="Utilities\CCompare.h" />
-    <ClInclude Include="Utilities\CConsole.h" />
+    <ClInclude Include="Utilities\Compare.h" />
+    <ClInclude Include="Utilities\Console.h" />
     <ClInclude Include="Entities\Customer\Customer.h" />
     <ClInclude Include="Entities\Date\Date.h" />
     <ClInclude Include="File\File.h" />

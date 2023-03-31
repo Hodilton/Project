@@ -58,11 +58,8 @@
     <ClInclude Include="Utilities\stdafx.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="Utilities\CConsole.h">
+    <ClInclude Include="Utilities\Console.h">
       <Filter>Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="Utilities\CCompare.h">
-      <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Entities\Customer\Customer.h">
       <Filter>Entities</Filter>
@@ -96,6 +93,9 @@
     </ClInclude>
     <ClInclude Include="File\FilePath\FileName.h">
       <Filter>File</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Compare.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

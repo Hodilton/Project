@@ -23,7 +23,7 @@ public:
             return false;
         }
 
-        BehaviorWrite(fout, tree, tree.GetRoot());
+        SetBehaviorWrite(fout, tree, tree.GetRoot());
         fout.close();
 
         return true;
@@ -41,7 +41,7 @@ public:
             return false;
         }
 
-        BehaviorRead(fin, tree);
+        SetBehaviorRead(fin, tree);
 
         fin.close();
 
@@ -62,6 +62,6 @@ protected:
         return true;
     }
 
-    virtual void BehaviorWrite(ostream& fout, const Tree<T>& tree, const Node<T>* root) const = 0;
-    virtual void BehaviorRead(ifstream& fin, Tree<T>& tree) const = 0;
+    virtual void SetBehaviorWrite(ostream& fout, const Tree<T>& tree, const Node<T>* root) const = 0;
+    virtual void SetBehaviorRead(ifstream& fin, Tree<T>& tree) const = 0;
 };

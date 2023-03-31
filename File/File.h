@@ -1,6 +1,4 @@
 #pragma once
-#include "Fund.h"
-#include "Customer.h"
 #include "FileName.h"
 #include "FileIO.h"
 #include "FileIOBinary.h"

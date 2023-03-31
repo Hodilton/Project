@@ -67,9 +67,22 @@ bool Customer::operator>(const Customer& another) const
 
 bool Customer::operator==(const Customer& another) const
 {
-    return strcmp(this->last_name, another.last_name) == 0
-        && strcmp(this->first_name, another.first_name) == 0
-        && strcmp(this->middle_name, another.middle_name) == 0;
+    const string state = Compare::GetState();
+    if (state == "middle") {
+        return strcmp(this->last_name, another.last_name) == 0
+            && strcmp(this->first_name, another.first_name) == 0
+            && strcmp(this->middle_name, another.middle_name) == 0;
+    }
+    if (state == "first") {
+        return strcmp(this->last_name, another.last_name) == 0
+            && strcmp(this->first_name, another.first_name) == 0;
+    }
+    if (state == "last") {
+        return strcmp(this->last_name, another.last_name) == 0;
+    }
+    if (state == "pass") {
+        return this->passport == another.passport;
+    }
 }
 
 Customer& Customer::operator=(const Customer& another)
