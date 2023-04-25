@@ -59,6 +59,16 @@ void Tree<T>::DeleteNode(Node<T>** root, const T& data)
 }
 
 template<typename T>
+void Tree<T>::SearchNode(Tree<T>& tree, Node<T>* root, const T& data)
+{
+    if (root) {
+        SearchNode(tree, root->right, data);
+        if (data == root->data) tree.AddNode(root->data);
+        SearchNode(tree, root->left, data);
+    }
+}
+
+template<typename T>
 void Tree<T>::Print(ostream& out, Node<T>* root) const
 {
    /* if (root) {
@@ -164,6 +174,12 @@ template<typename T>
 void Tree<T>::DeleteNode(const T& data)
 {
     this->DeleteNode(&_root, data);
+}
+
+template<typename T>
+void Tree<T>::SearchNode(Tree<T>& tree, const T& data)
+{
+    this->SearchNode(tree, _root, data);
 }
 
 template<typename T>

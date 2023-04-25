@@ -12,7 +12,7 @@
 template<typename T>
 class Console {
 public:
-	static T ReadNumber(const vector<string>& text, istream& in = cin, T min = numeric_limits<T>::min(), T max = numeric_limits<T>::max())
+	static T MenuReadNumber(const vector<string>& text, istream& in = cin, T min = numeric_limits<T>::min(), T max = numeric_limits<T>::max())
 	{
 		T input;
 

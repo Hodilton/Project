@@ -29,6 +29,31 @@ Customer::Customer(const Customer& another)
 	strncpy_s(this->street, another.street, sizeof(this->street));
 }
 
+void Customer::ReadToConsole()
+{
+    cout << endl;
+    cout << "Last Name: ";
+    cin >> this->last_name;
+    cout << "First Name: ";
+    cin >> this->first_name;
+    cout << "Middle Name: ";
+    cin >> this->middle_name;
+    cout << "Passport: ";
+    cin >> this->passport;
+
+    /*cout << "City: ";
+    cin >> this->city;
+    cout << "Street: ";
+    cin >> this->street;
+    cout << "Home: ";
+    cin >> this->home;
+    cout << "Apartment: ";
+    cin >> this->apartment;
+    cout << "ID: ";
+    cin >> this->id;*/
+
+}
+
 bool Customer::operator<(const Customer& another) const
 {
     int result = strcmp(this->last_name, another.last_name);
@@ -68,19 +93,25 @@ bool Customer::operator>(const Customer& another) const
 bool Customer::operator==(const Customer& another) const
 {
     const string state = Compare::GetState();
-    if (state == "middle") {
+    if (state == "lfm") {
         return strcmp(this->last_name, another.last_name) == 0
             && strcmp(this->first_name, another.first_name) == 0
             && strcmp(this->middle_name, another.middle_name) == 0;
     }
-    if (state == "first") {
+    if (state == "lf") {
         return strcmp(this->last_name, another.last_name) == 0
             && strcmp(this->first_name, another.first_name) == 0;
     }
-    if (state == "last") {
+    if (state == "l") {
         return strcmp(this->last_name, another.last_name) == 0;
     }
-    if (state == "pass") {
+    if (state == "f") {
+        return strcmp(this->first_name, another.first_name) == 0;
+    }
+    if (state == "m") {
+        return strcmp(this->middle_name, another.middle_name) == 0;
+    }
+    if (state == "p") {
         return this->passport == another.passport;
     }
 }

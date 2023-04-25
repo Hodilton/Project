@@ -140,6 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="File\FileIO\FileIOBinary.h" />
+    <ClInclude Include="Menu\CustomerMenu.h" />
+    <ClInclude Include="Menu\MainMenu.h" />
+    <ClInclude Include="Menu\OutputTableMenu.h" />
     <ClInclude Include="Utilities\Compare.h" />
     <ClInclude Include="Utilities\Console.h" />
     <ClInclude Include="Entities\Customer\Customer.h" />

@@ -25,6 +25,7 @@ private:
     Node<T>* CreateRoot(const T& data);
     void AddNode(Node<T>** root, const T& data);
     void DeleteNode(Node<T>** root, const T& data);
+    void SearchNode(Tree<T>& tree, Node<T>* root, const T& data);
     void Print(ostream& out, Node<T>* root) const;
     void FreeMemory(Node<T>** root);
 
@@ -36,6 +37,7 @@ public:
 
     void AddNode(const T& data);
     void DeleteNode(const T& data);
+    void SearchNode(Tree<T>& tree, const T& data);
     void Print(ostream& out) const;
 
     Node<T>* GetRoot() const;

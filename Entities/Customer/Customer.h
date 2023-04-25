@@ -2,7 +2,12 @@
 #include "stdafx.h"
 #include "Compare.h"
 
-class Customer {
+class BaseEntities {
+public:
+	virtual void ReadToConsole() = 0;
+};
+
+class Customer : BaseEntities {
 public:
 	char last_name[256];
 	char first_name[256];
@@ -19,6 +24,8 @@ public:
 	Customer(const char* last_name, const char* first_name, const char* middle_name, const size_t& passport, const char* city,
 		      const char* street, const size_t& home, const size_t& apartment, const size_t& id);
 	Customer(const Customer& another);
+
+	void ReadToConsole() override;
 
 	bool operator<(const Customer& another) const;
 	bool operator>(const Customer& another) const;
