@@ -25,14 +25,6 @@ int main() {
 
 	const MainMenu main_menu;
 	Menu::Display(main_menu);
-
-	/*Customer customer_search;
-	customer_search.ReadToConsole();
-
-	Tree<Customer> tree_search;
-	Compare::SwitchState("f");
-	tree_customer.SearchNode(tree_search, customer_search);
-	tree_search.Print(cout);*/
 	
 	return 0;
 }

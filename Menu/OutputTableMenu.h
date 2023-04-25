@@ -4,6 +4,11 @@
 
 class OutputTableMenu : public MenuItem {
 public:
+    virtual const bool& GetMenuReplay() const override {
+        static bool replay = false;
+        return replay;
+    }
+
     const vector<string>& GetText() const override {
         static const vector<string> text = { "Select:\n",
                                              "1) Вывод списка клиентов;\n",

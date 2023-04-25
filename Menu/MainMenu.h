@@ -6,6 +6,11 @@
 
 class MainMenu : public MenuItem {
 public:
+    const bool& GetMenuReplay() const override {
+        static bool replay = true;
+        return replay;
+    }
+
     const vector<string>& GetText() const override {
         static const vector<string> text = { "Select:\n",
                                              "1) Работа с клиентами;\n",

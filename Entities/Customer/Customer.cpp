@@ -93,25 +93,25 @@ bool Customer::operator>(const Customer& another) const
 bool Customer::operator==(const Customer& another) const
 {
     const string state = Compare::GetState();
-    if (state == "lfm") {
+    if (state == "lfm") { // фамилия, имя и отчество
         return strcmp(this->last_name, another.last_name) == 0
             && strcmp(this->first_name, another.first_name) == 0
             && strcmp(this->middle_name, another.middle_name) == 0;
     }
-    if (state == "lf") {
+    if (state == "lf") { // фамилия и имя
         return strcmp(this->last_name, another.last_name) == 0
             && strcmp(this->first_name, another.first_name) == 0;
     }
-    if (state == "l") {
+    if (state == "l") { // фамилия
         return strcmp(this->last_name, another.last_name) == 0;
     }
-    if (state == "f") {
+    if (state == "f") { // имя
         return strcmp(this->first_name, another.first_name) == 0;
     }
-    if (state == "m") {
+    if (state == "m") { // отчество
         return strcmp(this->middle_name, another.middle_name) == 0;
     }
-    if (state == "p") {
+    if (state == "p") { // пасспорт
         return this->passport == another.passport;
     }
 }
