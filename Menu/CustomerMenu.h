@@ -129,7 +129,9 @@ private:
                 system("cls");
             }
         }
-        system("pause");
+
+        // Обнволение списков
+        //system("pause");
     }
 
     void Method_3() const {

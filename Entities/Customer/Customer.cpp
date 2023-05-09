@@ -103,6 +103,10 @@ void Customer::ReadToConsole()
 
 bool Customer::operator<(const Customer& another) const
 {
+    if (*this == another) {
+        return false; // מבתוךעû נאגםû
+    }
+
     int result = strcmp(this->last_name, another.last_name);
     if (result < 0) {
         return true;
@@ -121,6 +125,10 @@ bool Customer::operator<(const Customer& another) const
 
 bool Customer::operator>(const Customer& another) const
 {
+    if (*this == another) {
+        return false; // מבתוךעû נאגםû
+    }
+
     int result = strcmp(this->last_name, another.last_name);
     if (result > 0) {
         return true;
