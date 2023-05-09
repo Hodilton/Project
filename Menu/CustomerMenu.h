@@ -52,7 +52,7 @@ public:
     const vector<string>& GetText() const override {
         static const vector<string> text = { "Select:\n",
                                              "1) Добавить клиента;\n",
-                                             "2) Удалить клиента;\n",
+                                             "2) Освободить номер;\n",
                                              "3) Поиск клиентов;\n",
                                              "4) Вернуться назад.\n",
                                              "Your choice: "
@@ -76,7 +76,59 @@ private:
     }
 
     void Method_2() const {
-        cout << "Удалить клиента" << endl;
+        vector<string> text;
+        text.push_back("Введите номер: ");
+        int input;
+
+        while (true) {
+            system("cls");
+            OutputTable::Fund();
+            copy(text.begin(), text.end(), ostream_iterator<string>(cout));
+
+            bool input_flag = false;
+            if ((cin >> input).good())
+            {
+                Fund fund_search;
+                fund_search.id = input;
+
+                Tree<Fund> tree_search;
+                tree_fund.SearchNode(tree_search, fund_search);
+
+                const Node<Fund>* root = tree_search.GetRoot();
+
+                if (root) {
+                    input_flag = true;
+                    Fund fund_delete = tree_fund.ReplaceUnit(fund_search);
+
+                    vector<size_t> passports = {
+                        fund_delete.passport_1,
+                        fund_delete.passport_2,
+                        fund_delete.passport_3
+                    };
+
+                    Compare::SwitchState("p");
+                    for (auto& passport : passports) {
+                        Customer customer_delete;
+                        customer_delete.passport = passport;
+                        tree_customer.DeleteNode(customer_delete);
+                    }
+
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    text.push_back(to_string(input));
+                    break;
+                }
+            }
+            
+            if (!input_flag)
+            {
+                cin.clear();
+                cout << "Please enter a number from the acceptable range of values." << endl;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                system("pause");
+                system("cls");
+            }
+        }
         system("pause");
     }
 
@@ -84,12 +136,12 @@ private:
         const SetBehaviorSearchCustomer set_behavior_search_customer;
         Menu::Display(set_behavior_search_customer);
 
-        /*Customer customer_search;
-        customer_search.ReadToConsole();
+        Customer customer_search;
+        customer_search.ReadForSearch();
 
         Tree<Customer> tree_search;
         tree_customer.SearchNode(tree_search, customer_search);
-        tree_search.Print(cout);*/
+        tree_search.Print(cout);
 
         system("pause");
     }

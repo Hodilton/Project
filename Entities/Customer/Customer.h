@@ -1,10 +1,12 @@
 #pragma once
 #include "stdafx.h"
 #include "Compare.h"
+#include "Console.h"
 
 class BaseEntities {
 public:
 	virtual void ReadToConsole() = 0;
+	virtual void ReadForSearch() = 0;
 };
 
 class Customer : BaseEntities {
@@ -26,6 +28,7 @@ public:
 	Customer(const Customer& another);
 
 	void ReadToConsole() override;
+	void ReadForSearch() override;
 
 	bool operator<(const Customer& another) const;
 	bool operator>(const Customer& another) const;

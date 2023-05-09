@@ -71,13 +71,13 @@ void Tree<T>::SearchNode(Tree<T>& tree, Node<T>* root, const T& data)
 template<typename T>
 void Tree<T>::Print(ostream& out, Node<T>* root) const
 {
-   /* if (root) {
-        Print(root->right);
-        out << root->data << endl << endl;
-        Print(root->left);
-    }*/
-
     if (root) {
+        Print(out, root->left);
+        out << root->data << endl << endl;
+        Print(out, root->right);
+    }
+
+    /*if (root) {
         bool new_line;
         bool first = true;
         do {
@@ -115,7 +115,25 @@ void Tree<T>::Print(ostream& out, Node<T>* root) const
     }
     else {
         cout << "Root is empty" << endl;
+    }*/
+}
+
+template<typename T>
+void Tree<T>::ReplaceUnit(Node<T>** root, const T& data, T& data_return)
+{
+    if (*root) {
+        ReplaceUnit(&(*root)->left, data, data_return);
+        if (data == (*root)->data) {
+            data_return = (*root)->data;
+            (*root)->data = data;
+        }
+        ReplaceUnit(&(*root)->right, data, data_return);
     }
+}
+
+template<typename T>
+void Tree<T>::DeleteUnit(Node<T>** root, const T& data)
+{
 }
 
 template<typename T>
@@ -186,6 +204,20 @@ template<typename T>
 void Tree<T>::Print(ostream& out) const
 {
     this->Print(out, _root);
+}
+
+template<typename T>
+T Tree<T>::ReplaceUnit(const T& data)
+{
+    T data_return;
+    this->ReplaceUnit(&_root, data, data_return);
+    return data_return;
+}
+
+template<typename T>
+void Tree<T>::DeleteUnit(const T& data)
+{
+    
 }
 
 template<typename T>

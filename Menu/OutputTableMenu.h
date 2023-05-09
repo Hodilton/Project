@@ -29,12 +29,12 @@ public:
 
 private:
     void Method_1() const {
-        cout << "Вывод списка клиентов" << endl;
+        OutputTable::Customer();
         system("pause");
     }
 
     void Method_2() const {
-        cout << "Вывод списка учёта номерного фонда" << endl;
+        OutputTable::Fund();
         system("pause");
     }
 

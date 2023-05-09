@@ -27,6 +27,8 @@ private:
     void DeleteNode(Node<T>** root, const T& data);
     void SearchNode(Tree<T>& tree, Node<T>* root, const T& data);
     void Print(ostream& out, Node<T>* root) const;
+    void ReplaceUnit(Node<T>** root, const T& data, T& data_return);
+    void DeleteUnit(Node<T>** root, const T& data);
     void FreeMemory(Node<T>** root);
 
     Node<T>* FindMin(Node<T>* data);
@@ -39,6 +41,8 @@ public:
     void DeleteNode(const T& data);
     void SearchNode(Tree<T>& tree, const T& data);
     void Print(ostream& out) const;
+    T ReplaceUnit(const T& data);
+    void DeleteUnit(const T& data);
 
     Node<T>* GetRoot() const;
 };

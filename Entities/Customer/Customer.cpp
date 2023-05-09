@@ -29,9 +29,57 @@ Customer::Customer(const Customer& another)
 	strncpy_s(this->street, another.street, sizeof(this->street));
 }
 
+void Customer::ReadForSearch()
+{
+    const string search_state = Compare::GetState();
+    vector<string> text;
+
+    if (search_state == "lfm") { // фамилия, имя и отчество
+        text.push_back("Last Name: ");
+        Console<string>::ReadString(text);
+        strncpy_s(this->last_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->last_name));
+
+        text.push_back("First Name: ");
+        Console<string>::ReadString(text);
+        strncpy_s(this->first_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->first_name));
+
+        text.push_back("Middle Name: ");
+        Console<string>::ReadString(text);
+        strncpy_s(this->middle_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->middle_name));
+    }
+    if (search_state == "lf") { // фамилия и имя
+        text.push_back("Last Name: ");
+        Console<string>::ReadString(text);
+        strncpy_s(this->last_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->last_name));
+
+        text.push_back("First Name: ");
+        Console<string>::ReadString(text);
+        strncpy_s(this->first_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->first_name));
+    }
+    if (search_state == "l") { // фамилия
+        text.push_back("Last Name: ");
+        Console<string>::ReadString(text);
+        strncpy_s(this->last_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->last_name));
+    }
+    if (search_state == "f") { // имя
+        text.push_back("First Name: ");
+        Console<string>::ReadString(text);
+        strncpy_s(this->first_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->first_name));
+    }
+    if (search_state == "m") { // отчество
+        text.push_back("Middle Name: ");
+        Console<string>::ReadString(text);
+        strncpy_s(this->middle_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->middle_name));
+    }
+    if (search_state == "p") { // пасспорт
+        text.push_back("Passport: ");
+        Console<int>::ReadNumber(text, cin, 0, 10e+9);
+        this->passport = stoi(text[text.size() - 2]);
+    }
+}
+
 void Customer::ReadToConsole()
 {
-    cout << endl;
     cout << "Last Name: ";
     cin >> this->last_name;
     cout << "First Name: ";
@@ -51,7 +99,6 @@ void Customer::ReadToConsole()
     cin >> this->apartment;
     cout << "ID: ";
     cin >> this->id;*/
-
 }
 
 bool Customer::operator<(const Customer& another) const
@@ -92,26 +139,26 @@ bool Customer::operator>(const Customer& another) const
 
 bool Customer::operator==(const Customer& another) const
 {
-    const string state = Compare::GetState();
-    if (state == "lfm") { // фамилия, имя и отчество
+    const string search_state = Compare::GetState();
+    if (search_state == "lfm") { // фамилия, имя и отчество
         return strcmp(this->last_name, another.last_name) == 0
             && strcmp(this->first_name, another.first_name) == 0
             && strcmp(this->middle_name, another.middle_name) == 0;
     }
-    if (state == "lf") { // фамилия и имя
+    if (search_state == "lf") { // фамилия и имя
         return strcmp(this->last_name, another.last_name) == 0
             && strcmp(this->first_name, another.first_name) == 0;
     }
-    if (state == "l") { // фамилия
+    if (search_state == "l") { // фамилия
         return strcmp(this->last_name, another.last_name) == 0;
     }
-    if (state == "f") { // имя
+    if (search_state == "f") { // имя
         return strcmp(this->first_name, another.first_name) == 0;
     }
-    if (state == "m") { // отчество
+    if (search_state == "m") { // отчество
         return strcmp(this->middle_name, another.middle_name) == 0;
     }
-    if (state == "p") { // пасспорт
+    if (search_state == "p") { // пасспорт
         return this->passport == another.passport;
     }
 }
@@ -146,7 +193,7 @@ istream& operator>>(istream& in, Customer& another)
 
 ostream& operator<<(ostream& out, const Customer& another)
 {
-	out << "Last Name: " << another.last_name << endl;
+	/*out << "Last Name: " << another.last_name << endl;
 	out << "First Name: " << another.first_name << endl;
 	out << "Middle Name: " << another.middle_name << endl;
 	out << "Passport: " << another.passport << endl;
@@ -154,6 +201,26 @@ ostream& operator<<(ostream& out, const Customer& another)
 	out << "Street: " << another.street << endl;
 	out << "Home: " << another.home << endl;
 	out << "Apartment: " << another.apartment << endl;
-	out << "ID: " << another.id;
+	out << "ID: " << another.id;*/
+
+    out << "|" << setw(25) << left << another.last_name;
+    out << "|" << setw(20) << left << another.first_name;
+    out << "|" << setw(25) << left << another.middle_name;
+    out << "|" << setw(10) << left << another.passport;
+    out << "|" << setw(30) << left << another.city;
+    out << "|" << setw(25) << left << another.street;
+    out << "|" << setw(3) << left << another.home;
+    if (another.apartment != 0) {
+        out << "|" << setw(8) << left << another.apartment;
+    }
+    else {
+        cout << "|" << setw(8) << left << "Нет";
+    }
+
+    cout << endl;
+    for (int i = 0; i < 156; i++) {
+        cout << '-';
+    } cout << endl;
+
 	return out;
 }

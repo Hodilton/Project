@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "MenuItem.h"
+#include "OutputTable.h"
 #include "CustomerMenu.h"
 #include "OutputTableMenu.h"
 

@@ -3,6 +3,9 @@
 #include "Fund.h"
 #include "Customer.h"
 #include "File.h"
+
+Tree<Fund> tree_fund;
+Tree<Customer> tree_customer;
 #include "MainMenu.h"
 
 string Compare::_current_state = "lfm";
@@ -11,17 +14,19 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	Tree<Fund> tree_fund;
-	Tree<Customer> tree_customer;
-
 	//File::customer_source.Read(tree_customer);
 	//File::customer_bin.Write(tree_customer);
 
-	//File::customer_bin.Read(tree_customer);
+	File::customer_bin.Read(tree_customer);
 	//tree_customer.Print(cout);
 
-	//File::fund_bin.Read(tree_fund);
+
+	//File::fund_source.Read(tree_fund);
+	//File::fund_bin.Write(tree_fund);
+
+	File::fund_bin.Read(tree_fund);
 	//tree_fund.Print(cout);
+	//system("pause");
 
 	const MainMenu main_menu;
 	Menu::Display(main_menu);

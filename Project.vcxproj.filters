@@ -106,6 +106,9 @@
     <ClInclude Include="Menu\OutputTableMenu.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Utilities\OutputTable.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Customer.bin">

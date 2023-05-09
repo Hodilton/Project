@@ -47,11 +47,44 @@ istream& operator>>(istream& in, Fund& another)
 
 ostream& operator<<(ostream& out, const Fund& another)
 {
-	out << "ID: " << another.id << endl;
+	/*out << "ID: " << another.id << endl;
 	out << "Arrival: " << another.arrival << endl;
 	out << "Depart: " << another.depart << endl;
 	out << "Passport_1: " << another.passport_1 << endl;
 	out << "Passport_2: " << another.passport_2 << endl;
-	out << "Passport_3: " << another.passport_3;
+	out << "Passport_3: " << another.passport_3;*/
+
+	out << setw(14) << left << another.id;
+	if (another.id <= 2000)
+	{
+		out << "|" << setw(15) << left << another.passport_1;
+		out << "|" << setw(15) << "Нет";
+		out << "|" << setw(15) << "Нет";
+	} else
+	if (another.id <= 3000)
+	{
+	cout << "|" << setw(15) << left << another.passport_1;
+		out << "|" << setw(15) << left << another.passport_2;
+		out << "|" << setw(15) << "Нет";
+	} else 
+	if (another.id <= 4000)
+	{
+		out << "|" << setw(15) << left << another.passport_1;
+		out << "|" << setw(15) << left << another.passport_2;
+		out << "|" << setw(15) << left << another.passport_3;
+	}
+
+	out << "|" << setw(5) << left << another.arrival.day;
+	out << "|" << setw(8) << left << another.arrival.month;
+	out << "|" << setw(15) << left << another.arrival.year;
+	out << "|" << setw(5) << left << another.depart.day;
+	out << "|" << setw(8) << left << another.depart.month;
+	out << "|" << setw(15) << left << another.depart.year;
+
+	cout << endl;
+	for (int i = 0; i < 156; i++) {
+		cout << '-';
+	} cout << endl;
+
 	return out;
 }
