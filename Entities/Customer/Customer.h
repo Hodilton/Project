@@ -22,7 +22,7 @@ public:
 		      const char* street, const size_t& home, const size_t& apartment, const size_t& id);
 	Customer(const Customer& another);
 
-	void ReadToConsole(vector<string>& text) override;
+	void ReadToConsole(vector<string>& text, bool cin_ignore = false) override;
 	void ReadForSearch() override;
 
 	bool operator<(const Customer& another) const;

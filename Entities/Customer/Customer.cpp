@@ -78,9 +78,9 @@ void Customer::ReadForSearch()
     }
 }
 
-void Customer::ReadToConsole(vector<string>& text)
+void Customer::ReadToConsole(vector<string>& text, bool cin_ignore)
 {
-    cin.ignore();
+    if(cin_ignore) cin.ignore();
     text.push_back("Last Name: "); 
     Console<string>::ReadString(text);
     strncpy_s(this->last_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->last_name));
@@ -240,13 +240,14 @@ ostream& operator<<(ostream& out, const Customer& another)
         out << "|" << setw(8) << left << another.apartment;
     }
     else {
-        cout << "|" << setw(8) << left << "Нет";
+        out << "|" << setw(8) << left << "Нет";
     }
+    out << "|" << setw(12) << left << another.id;
 
-    cout << endl;
-    for (int i = 0; i < 156; i++) {
-        cout << '-';
-    } cout << endl;
+    out << endl;
+    for (int i = 0; i < 168; i++) {
+        out << '-';
+    } out << endl;
 
 	return out;
 }

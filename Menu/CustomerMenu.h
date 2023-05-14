@@ -75,6 +75,7 @@ private:
         text.push_back("Введите номер: ");
         int input;
 
+        Tree<Customer> customer_addition;
         while (true) {
             system("cls");
             OutputTable::DisplayFreeFund();
@@ -95,16 +96,17 @@ private:
                     text.clear();
                     input_flag = true;
 
-                    Tree<Customer> customer_addition;
-
                     vector<int> passports;
+                    bool cin_ignore = true;
                     for (size_t i = 0; i < root->data.id / 1000; i++) {
                         Customer customer;
-                        customer.ReadToConsole(text);
+                        customer.ReadToConsole(text, cin_ignore);
                         customer.id = root->data.id;
+                        customer_addition.AddNode(customer);
                         tree_customer.AddNode(customer);
 
                         passports.push_back(customer.passport);
+                        cin_ignore = false;
                     }
 
                     fund_search.ReadToConsole(text);
@@ -130,7 +132,9 @@ private:
             }
         }
 
-        // Обнволение файлов
+        File::customer_bin.Write(customer_addition, true);
+        File::fund_bin.Write(tree_fund);
+
         cout << "Клиенты были доабвлены." << endl;
         system("pause");
     }
@@ -190,7 +194,9 @@ private:
             }
         }
 
-        // Обнволение файлов
+        File::customer_bin.Write(tree_customer);
+        File::fund_bin.Write(tree_fund);
+
         cout << "Номер был освобождён." << endl;
         system("pause");
     }

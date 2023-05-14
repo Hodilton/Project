@@ -8,7 +8,7 @@ Fund::Fund(const size_t& id, const size_t& passport_1, const size_t& passport_2,
 Fund::Fund(const Fund& another) 
 	: id(another.id), passport_1(another.passport_1), passport_2(another.passport_2), passport_3(another.passport_3), depart(another.depart), arrival(another.arrival) {}
 
-void Fund::ReadToConsole(vector<string>& text)
+void Fund::ReadToConsole(vector<string>& text, bool cin_ignore)
 {
 	text.push_back("Arrival date: ");
 	this->arrival.ReadToConsole(text);

@@ -43,7 +43,7 @@ private:
 	}
 
 	static void DisplayCustomerTitle() {
-		PrintLine(156);
+		PrintLine(168);
 		cout << "|" << setw(25) << left << "Фамилия";
 		cout << "|" << setw(20) << left << "Имя";
 		cout << "|" << setw(25) << left << "Отчество";
@@ -52,7 +52,8 @@ private:
 		cout << "|" << setw(25) << left << "Улица";
 		cout << "|" << setw(3) << left << "Дом";
 		cout << "|" << setw(8) << left << "Квартира";
-		PrintLine(156);
+		cout << "|" << setw(12) << left << "ID";
+		PrintLine(168);
 	}
 
 	static void DisplayFundHelper(const Node<Fund>* root, bool is_busy) {

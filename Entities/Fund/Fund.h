@@ -18,7 +18,7 @@ public:
 	Fund(const size_t& id, const size_t& passport_1, const size_t& passport_2, const size_t& passport_3, const Date& arrival, const Date& depart);
 	Fund(const Fund& another);
 
-	void ReadToConsole(vector<string>& text) override;
+	void ReadToConsole(vector<string>& text, bool cin_ignore = false) override;
 	void ReadForSearch() override { } ;
 
 	bool operator<(const Fund& another) const;

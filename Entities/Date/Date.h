@@ -13,7 +13,7 @@ public:
 	Date(const size_t& day, const size_t& month, const size_t& year);
 	Date(const Date& another);
 
-	void ReadToConsole(vector<string>& text) override;
+	void ReadToConsole(vector<string>& text, bool cin_ignore = false) override;
 	void ReadForSearch() override { };
 
 	Date& operator=(const Date& another);

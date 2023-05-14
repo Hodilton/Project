@@ -6,7 +6,7 @@ Date::Date(const size_t& day, const size_t& month, const size_t& year) : day(day
 
 Date::Date(const Date& another) : day(another.day), month(another.month), year(another.year) {}
 
-void Date::ReadToConsole(vector<string>& text)
+void Date::ReadToConsole(vector<string>& text, bool cin_ignore)
 {
 	while (true) {
 		Console<int>::ReadNumber(text, cin, 1, 31);
