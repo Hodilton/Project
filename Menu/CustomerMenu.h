@@ -102,6 +102,7 @@ private:
                         Customer customer;
                         customer.ReadToConsole(text, cin_ignore);
                         customer.id = root->data.id;
+
                         customer_addition.AddNode(customer);
                         tree_customer.AddNode(customer);
 
@@ -110,10 +111,9 @@ private:
                     }
 
                     fund_search.ReadToConsole(text);
-
-                    fund_search.passport_1 = passports[0];
-                    fund_search.passport_2 = passports.size() > 1 ? passports[1] : 0;
-                    fund_search.passport_3 = passports.size() > 2 ? passports[2] : 0;
+                    fund_search.UpdatePassports(passports);
+                    fund_search.price = root->data.price;
+                    fund_search.UpdateCost();
                         
                     tree_fund.ReplaceUnit(fund_search);           
 
@@ -135,7 +135,7 @@ private:
         File::customer_bin.Write(customer_addition, true);
         File::fund_bin.Write(tree_fund);
 
-        cout << "Клиенты были доабвлены." << endl;
+        cout << "Клиенты были добавлены." << endl;
         system("pause");
     }
 
@@ -162,6 +162,7 @@ private:
 
                 if (root && root->data.passport_1 != 0) {
                     input_flag = true;
+                    fund_search.price = root->data.price;
                     Fund fund_delete = tree_fund.ReplaceUnit(fund_search);
 
                     vector<size_t> passports = {

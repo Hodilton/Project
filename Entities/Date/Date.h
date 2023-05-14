@@ -13,6 +13,8 @@ public:
 	Date(const size_t& day, const size_t& month, const size_t& year);
 	Date(const Date& another);
 
+	static int GetSeconds(Date& date);
+
 	void ReadToConsole(vector<string>& text, bool cin_ignore = false) override;
 	void ReadForSearch() override { };
 

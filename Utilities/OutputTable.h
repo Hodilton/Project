@@ -32,6 +32,8 @@ private:
 		cout << "|" << setw(15) << left << "Пасспорт 3";
 		cout << "|" << setw(30) << left << "Дата заезда";
 		cout << "|" << setw(30) << left << "Дата выезда";
+		cout << "|" << setw(8) << left << "Прайс";
+		cout << "|" << setw(8) << left << "Стоимость";
 		PrintLine(156);
 
 		cout << setw(15) << right << "|" << setw(16) << right << "|" << setw(16) << right << "|" << setw(16) << right << "|";

@@ -1,5 +1,6 @@
 #pragma once
 #include "stdafx.h"
+#include <chrono>
 #include "Date.h"
 #include "Console.h"
 #include "BaseEntities.h"
@@ -13,10 +14,16 @@ public:
 
 	Date arrival;
 	Date depart;
+
+	size_t price;
+	size_t cost;
 	
 	Fund();
-	Fund(const size_t& id, const size_t& passport_1, const size_t& passport_2, const size_t& passport_3, const Date& arrival, const Date& depart);
+	Fund(const size_t& id, const size_t& passport_1, const size_t& passport_2, const size_t& passport_3, const Date& arrival, const Date& depart, const size_t& price, const size_t& cost);
 	Fund(const Fund& another);
+
+	void UpdatePassports(vector<int>& passports);
+	void UpdateCost();
 
 	void ReadToConsole(vector<string>& text, bool cin_ignore = false) override;
 	void ReadForSearch() override { } ;

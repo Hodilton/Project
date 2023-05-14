@@ -1,76 +1,98 @@
 ID: 1211
 Arrival date: 1.9.19
 Departure date: 3.9.19
+Price: 650
+Cost: 1300
 Passport 1: 56
-Passport 2: -404
-Passport 3: -404
+Passport 2: 0
+Passport 3: 0
 
 ID: 1212
 Arrival date: 30.8.19
 Departure date: 11.9.19
+Price: 650
+Cost: 6500
 Passport 1: 12
-Passport 2: -404
-Passport 3: -404
+Passport 2: 0
+Passport 3: 0
 
 ID: 1223
 Arrival date: 11.12.21
 Departure date: 12.12.21
+Price: 600
+Cost: 600
 Passport 1: 1
-Passport 2: -404
-Passport 3: -404
+Passport 2: 0
+Passport 3: 0
 
 ID: 1224
 Arrival date: 0.0.0
 Departure date: 0.0.0
+Price: 600
+Cost: 0
 Passport 1: 0
-Passport 2: -404
-Passport 3: -404
+Passport 2: 0
+Passport 3: 0
 
 ID: 2211
 Arrival date: 22.8.19
 Departure date: 5.10.19
+Price: 1050
+Cost: 45150
 Passport 1: 78
 Passport 2: 34
-Passport 3: -404
+Passport 3: 0
 
 ID: 2212
 Arrival date: 2.9.19
 Departure date: 7.11.19
+Price: 1050
+Cost: 69300
 Passport 1: 72
 Passport 2: 1112
-Passport 3: -404
+Passport 3: 0
 
 ID: 2213
 Arrival date: 0.0.0
 Departure date: 0.0.0
+Price: 900
+Cost: 0
 Passport 1: 0
 Passport 2: 0
-Passport 3: -404
+Passport 3: 0
 
 ID: 2224
 Arrival date: 0.0.0
 Departure date: 0.0.0
+Price: 900
+Cost: 0
 Passport 1: 0
 Passport 2: 0
-Passport 3: -404
+Passport 3: 0
 
 ID: 2225
 Arrival date: 0.0.0
 Departure date: 0.0.0
+Price: 1250
+Cost: 0
 Passport 1: 0
 Passport 2: 0
-Passport 3: -404
+Passport 3: 0
 
 ID: 2226
 Arrival date: 0.0.0
 Departure date: 0.0.0
+Price: 1250
+Cost: 0
 Passport 1: 0
 Passport 2: 0
-Passport 3: -404
+Passport 3: 0
 
 ID: 3311
 Arrival date: 0.0.0
 Departure date: 0.0.0
+Price: 1850
+Cost: 0
 Passport 1: 0
 Passport 2: 0
 Passport 3: 0
@@ -78,6 +100,8 @@ Passport 3: 0
 ID: 3312
 Arrival date: 0.0.0
 Departure date: 0.0.0
+Price: 1850
+Cost: 0
 Passport 1: 0
 Passport 2: 0
 Passport 3: 0
@@ -85,6 +109,8 @@ Passport 3: 0
 ID: 3323
 Arrival date: 0.0.0
 Departure date: 0.0.0
+Price: 1650
+Cost: 0
 Passport 1: 0
 Passport 2: 0
 Passport 3: 0
@@ -92,6 +118,8 @@ Passport 3: 0
 ID: 3324
 Arrival date: 0.0.0
 Departure date: 0.0.0
+Price: 1650
+Cost: 0
 Passport 1: 0
 Passport 2: 0
 Passport 3: 0

@@ -16,17 +16,11 @@ int main() {
 
 	//File::customer_source.Read(tree_customer);
 	//File::customer_bin.Write(tree_customer);
-
 	File::customer_bin.Read(tree_customer);
-	//tree_customer.Print(cout);
-
 
 	//File::fund_source.Read(tree_fund);
 	//File::fund_bin.Write(tree_fund);
-
 	File::fund_bin.Read(tree_fund);
-	//tree_fund.Print(cout);
-	//system("pause");
 
 	const MainMenu main_menu;
 	Menu::Display(main_menu);
