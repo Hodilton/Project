@@ -71,10 +71,6 @@ public:
 		}
 	}
 
-	static void ReadNumberFund(vector<string>& text, istream& in = cin) {
-		
-	}
-
 	static string ReadString(vector<string>& text, istream& in = cin) {
 		string str;
 

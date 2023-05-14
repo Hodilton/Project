@@ -78,27 +78,45 @@ void Customer::ReadForSearch()
     }
 }
 
-void Customer::ReadToConsole()
+void Customer::ReadToConsole(vector<string>& text)
 {
-    cout << "Last Name: ";
-    cin >> this->last_name;
-    cout << "First Name: ";
-    cin >> this->first_name;
-    cout << "Middle Name: ";
-    cin >> this->middle_name;
-    cout << "Passport: ";
-    cin >> this->passport;
+    cin.ignore();
+    text.push_back("Last Name: "); 
+    Console<string>::ReadString(text);
+    strncpy_s(this->last_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->last_name));
 
-    /*cout << "City: ";
-    cin >> this->city;
-    cout << "Street: ";
-    cin >> this->street;
-    cout << "Home: ";
-    cin >> this->home;
-    cout << "Apartment: ";
-    cin >> this->apartment;
-    cout << "ID: ";
-    cin >> this->id;*/
+    text.push_back("First Name: ");
+    Console<string>::ReadString(text);
+    strncpy_s(this->first_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->first_name));
+
+    text.push_back("Middle Name: ");
+    Console<string>::ReadString(text);
+    strncpy_s(this->middle_name, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->middle_name));
+
+    text.push_back("Passport: ");
+    Console<int>::ReadNumber(text, cin, 1);
+    text.push_back("\n");
+    this->passport = stoi(text[text.size() - 2]);
+
+    text.push_back("City: ");
+    Console<string>::ReadString(text);
+    strncpy_s(this->city, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->city));
+
+    text.push_back("Street: ");
+    Console<string>::ReadString(text);
+    strncpy_s(this->street, const_cast<char*>(text[text.size() - 2].c_str()), sizeof(this->street));
+   
+    text.push_back("Home: ");
+    Console<int>::ReadNumber(text, cin, 1);
+    text.push_back("\n");
+    this->home = stoi(text[text.size() - 2]);
+
+    text.push_back("Apartment: ");
+    Console<int>::ReadNumber(text, cin, 1);
+    text.push_back("\n");
+    this->apartment = stoi(text[text.size() - 2]);
+
+    text.push_back("\n");
 }
 
 bool Customer::operator<(const Customer& another) const

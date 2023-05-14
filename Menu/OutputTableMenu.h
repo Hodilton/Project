@@ -29,12 +29,12 @@ public:
 
 private:
     void Method_1() const {
-        OutputTable::Customer();
+        OutputTable::DisplayCustomer();
         system("pause");
     }
 
     void Method_2() const {
-        OutputTable::Fund();
+        OutputTable::DisplayFund();
         system("pause");
     }
 

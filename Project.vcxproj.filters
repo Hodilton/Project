@@ -109,6 +109,9 @@
     <ClInclude Include="Utilities\OutputTable.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Entities\BaseEntities.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Data\Customer.bin">

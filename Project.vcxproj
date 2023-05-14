@@ -139,6 +139,7 @@
     <Text Include="Data\Fund.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entities\BaseEntities.h" />
     <ClInclude Include="File\FileIO\FileIOBinary.h" />
     <ClInclude Include="Menu\CustomerMenu.h" />
     <ClInclude Include="Menu\MainMenu.h" />

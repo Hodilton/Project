@@ -71,18 +71,13 @@ public:
 
 private:
     void Method_1() const {
-        cout << "Добавление клиента" << endl;
-        system("pause");
-    }
-
-    void Method_2() const {
         vector<string> text;
         text.push_back("Введите номер: ");
         int input;
 
         while (true) {
             system("cls");
-            OutputTable::Fund();
+            OutputTable::DisplayFreeFund();
             copy(text.begin(), text.end(), ostream_iterator<string>(cout));
 
             bool input_flag = false;
@@ -96,7 +91,72 @@ private:
 
                 const Node<Fund>* root = tree_search.GetRoot();
 
-                if (root) {
+                if (root && root->data.passport_1 == 0) {
+                    text.clear();
+                    input_flag = true;
+
+                    Tree<Customer> customer_addition;
+
+                    vector<int> passports;
+                    for (size_t i = 0; i < root->data.id / 1000; i++) {
+                        Customer customer;
+                        customer.ReadToConsole(text);
+                        customer.id = root->data.id;
+                        tree_customer.AddNode(customer);
+
+                        passports.push_back(customer.passport);
+                    }
+
+                    fund_search.ReadToConsole(text);
+
+                    fund_search.passport_1 = passports[0];
+                    fund_search.passport_2 = passports.size() > 1 ? passports[1] : 0;
+                    fund_search.passport_3 = passports.size() > 2 ? passports[2] : 0;
+                        
+                    tree_fund.ReplaceUnit(fund_search);           
+
+                    cin.clear();
+                    break;
+                }
+            }
+
+            if (!input_flag)
+            {
+                cin.clear();
+                cout << "Please enter a number from the acceptable range of values." << endl;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                system("pause");
+                system("cls");
+            }
+        }
+
+        // Обнволение файлов
+        cout << "Клиенты были доабвлены." << endl;
+        system("pause");
+    }
+
+    void Method_2() const {
+        vector<string> text;
+        text.push_back("Введите номер: ");
+        int input;
+
+        while (true) {
+            system("cls");
+            OutputTable::DisplayBusyFund();
+            copy(text.begin(), text.end(), ostream_iterator<string>(cout));
+
+            bool input_flag = false;
+            if ((cin >> input).good())
+            {
+                Fund fund_search;
+                fund_search.id = input;
+
+                Tree<Fund> tree_search;
+                tree_fund.SearchNode(tree_search, fund_search);
+
+                const Node<Fund>* root = tree_search.GetRoot();
+
+                if (root && root->data.passport_1 != 0) {
                     input_flag = true;
                     Fund fund_delete = tree_fund.ReplaceUnit(fund_search);
 
@@ -130,8 +190,9 @@ private:
             }
         }
 
-        // Обнволение списков
-        //system("pause");
+        // Обнволение файлов
+        cout << "Номер был освобождён." << endl;
+        system("pause");
     }
 
     void Method_3() const {

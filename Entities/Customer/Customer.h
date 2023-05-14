@@ -2,12 +2,7 @@
 #include "stdafx.h"
 #include "Compare.h"
 #include "Console.h"
-
-class BaseEntities {
-public:
-	virtual void ReadToConsole() = 0;
-	virtual void ReadForSearch() = 0;
-};
+#include "BaseEntities.h"
 
 class Customer : BaseEntities {
 public:
@@ -27,7 +22,7 @@ public:
 		      const char* street, const size_t& home, const size_t& apartment, const size_t& id);
 	Customer(const Customer& another);
 
-	void ReadToConsole() override;
+	void ReadToConsole(vector<string>& text) override;
 	void ReadForSearch() override;
 
 	bool operator<(const Customer& another) const;
