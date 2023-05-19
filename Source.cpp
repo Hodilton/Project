@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "Tree.h"
 #include "Fund.h"
 #include "Customer.h"
+#include "Tree.h"
 #include "File.h"
 
 Tree<Fund> tree_fund;
@@ -9,6 +9,7 @@ Tree<Customer> tree_customer;
 #include "MainMenu.h"
 
 string Compare::_current_state = "lfm";
+string Compare::_temp_state = "lfm";
 
 int main() {
 	SetConsoleCP(1251);

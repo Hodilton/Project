@@ -23,27 +23,6 @@ public:
 		DisplayFundHelper(tree_fund.GetRoot(), true);
 	}
 
-private:
-	static void DisplayFundTitle() {
-		PrintLine(156);
-		cout << setw(14) << left << "Идентификатор";
-		cout << "|" << setw(15) << left << "Пасспорт 1";
-		cout << "|" << setw(15) << left << "Пасспорт 2";
-		cout << "|" << setw(15) << left << "Пасспорт 3";
-		cout << "|" << setw(30) << left << "Дата заезда";
-		cout << "|" << setw(30) << left << "Дата выезда";
-		cout << "|" << setw(8) << left << "Прайс";
-		cout << "|" << setw(8) << left << "Стоимость";
-		PrintLine(156);
-
-		cout << setw(15) << right << "|" << setw(16) << right << "|" << setw(16) << right << "|" << setw(16) << right << "|";
-
-		cout << setw(5) << left << "День" << "|" << setw(8) << left << "Месяц" << "|" << setw(15) << left << "Год" << "|";
-		cout << setw(5) << left << "День" << "|" << setw(8) << left << "Месяц" << "|" << setw(15) << left << "Год";
-
-		PrintLine(156);
-	}
-
 	static void DisplayCustomerTitle() {
 		PrintLine(168);
 		cout << "|" << setw(25) << left << "Фамилия";
@@ -56,6 +35,27 @@ private:
 		cout << "|" << setw(8) << left << "Квартира";
 		cout << "|" << setw(12) << left << "ID";
 		PrintLine(168);
+	}
+
+private:
+	static void DisplayFundTitle() {
+		PrintLine(156);
+		cout << setw(14) << left << "Идентификатор";
+		cout << "|" << setw(15) << left << "Паспорт 1";
+		cout << "|" << setw(15) << left << "Паспорт 2";
+		cout << "|" << setw(15) << left << "Паспорт 3";
+		cout << "|" << setw(30) << left << "Дата заезда";
+		cout << "|" << setw(30) << left << "Дата выезда";
+		cout << "|" << setw(8) << left << "Прайс";
+		cout << "|" << setw(8) << left << "Стоимость";
+		PrintLine(156);
+
+		cout << setw(15) << right << "|" << setw(16) << right << "|" << setw(16) << right << "|" << setw(16) << right << "|";
+
+		cout << setw(5) << left << "День" << "|" << setw(8) << left << "Месяц" << "|" << setw(15) << left << "Год" << "|";
+		cout << setw(5) << left << "День" << "|" << setw(8) << left << "Месяц" << "|" << setw(15) << left << "Год";
+
+		PrintLine(156);
 	}
 
 	static void DisplayFundHelper(const Node<Fund>* root, bool is_busy) {

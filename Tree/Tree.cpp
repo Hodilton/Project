@@ -63,7 +63,15 @@ void Tree<T>::SearchNode(Tree<T>& tree, Node<T>* root, const T& data)
 {
     if (root) {
         SearchNode(tree, root->right, data);
-        if (data == root->data) tree.AddNode(root->data);
+        if (data == root->data) {
+            Compare::SwitchTempState(Compare::GetState());
+            Compare::SwitchState("lfm");
+
+            tree.AddNode(root->data);
+
+            Compare::SwitchState(Compare::GetTempState());
+            Compare::SwitchTempState("lfm");
+        }
         SearchNode(tree, root->left, data);
     }
 }
@@ -73,7 +81,7 @@ void Tree<T>::Print(ostream& out, Node<T>* root) const
 {
     if (root) {
         Print(out, root->left);
-        out << root->data << endl << endl;
+        out << root->data << endl;
         Print(out, root->right);
     }
 

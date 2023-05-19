@@ -118,10 +118,10 @@ ostream& operator<<(ostream& out, const Fund& another)
 	out << "|" << setw(8) << left << another.price;
 	out << "|" << setw(8) << left << another.cost;
 
-	cout << endl;
+	out << endl;
 	for (int i = 0; i < 156; i++) {
-		cout << '-';
-	} cout << endl;
+		out << '-';
+	} //cout << endl;
 
 	return out;
 }

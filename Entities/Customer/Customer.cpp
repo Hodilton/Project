@@ -247,7 +247,7 @@ ostream& operator<<(ostream& out, const Customer& another)
     out << endl;
     for (int i = 0; i < 168; i++) {
         out << '-';
-    } out << endl;
+    } // out << endl;
 
 	return out;
 }

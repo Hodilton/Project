@@ -211,6 +211,7 @@ private:
 
         Tree<Customer> tree_search;
         tree_customer.SearchNode(tree_search, customer_search);
+        OutputTable::DisplayCustomerTitle();
         tree_search.Print(cout);
 
         system("pause");

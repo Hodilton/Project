@@ -2,6 +2,7 @@
 #ifndef _TREE_H_
 #define _TREE_H_
 #include "stdafx.h"
+#include "Compare.h"
 
 template <typename T>
 class Node {
