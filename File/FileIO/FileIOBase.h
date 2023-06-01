@@ -5,7 +5,8 @@
 template <typename T>
 class FileIOBase {
 public:
-    FileIOBase(const string& file_name, const bool& binary_mode) : _file_name(file_name), _binary_mode(binary_mode) {}
+    FileIOBase(const string& file_name, const bool& binary_mode) 
+        : _file_name(file_name), _binary_mode(binary_mode) {}
 
     bool Write(const Tree<T>& tree, bool append = false) const {
         ios_base::openmode mode = _binary_mode
@@ -49,6 +50,10 @@ public:
     }
 
 protected:
+    virtual void SetBehaviorWrite(ostream& fout, const Tree<T>& tree, const Node<T>* root) const = 0;
+    virtual void SetBehaviorRead(ifstream& fin, Tree<T>& tree) const = 0;
+
+private:
     string _file_name;
     bool _binary_mode;
 
@@ -61,7 +66,4 @@ protected:
         }
         return true;
     }
-
-    virtual void SetBehaviorWrite(ostream& fout, const Tree<T>& tree, const Node<T>* root) const = 0;
-    virtual void SetBehaviorRead(ifstream& fin, Tree<T>& tree) const = 0;
 };

@@ -97,7 +97,7 @@ ostream& operator<<(ostream& out, const Fund& another)
 	} else
 	if (another.id <= 3000)
 	{
-	cout << "|" << setw(15) << left << another.passport_1;
+	out << "|" << setw(15) << left << another.passport_1;
 		out << "|" << setw(15) << left << another.passport_2;
 		out << "|" << setw(15) << "Нет";
 	} else 

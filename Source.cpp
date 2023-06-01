@@ -15,16 +15,14 @@ int main() {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 
-	//File::customer_source.Read(tree_customer);
-	//File::customer_bin.Write(tree_customer);
 	File::customer_bin.Read(tree_customer);
-
-	//File::fund_source.Read(tree_fund);
-	//File::fund_bin.Write(tree_fund);
 	File::fund_bin.Read(tree_fund);
 
 	const MainMenu main_menu;
 	Menu::Display(main_menu);
 	
+	File::customer_txt.Write(tree_customer);
+	File::fund_txt.Write(tree_fund);
+
 	return 0;
 }

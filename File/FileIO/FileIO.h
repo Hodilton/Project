@@ -9,7 +9,7 @@ public:
 	FileIO() : FileIOBase<T>("") {};
 	FileIO(const string& file_name) : FileIOBase<T>(file_name, false) {}
 
-private:
+protected:
 	void SetBehaviorWrite(ostream& fout, const Tree<T>& tree, const Node<T>* root) const override {
 		tree.Print(fout);
 	}

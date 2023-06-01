@@ -9,7 +9,7 @@ public:
     FileIOBinary() : FileIOBase<T>("") {}
     FileIOBinary(const string& file_name) : FileIOBase<T>(file_name, true) {}
 
-private:
+protected:
     void SetBehaviorWrite(ostream& fout, const Tree<T>& tree, const Node<T>* root) const override {
         if (root) {
             SetBehaviorWrite(fout, tree, root->right);
